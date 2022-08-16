@@ -13,11 +13,6 @@ app.use("/", function (req, res, next) {
     next();
 });
 
-app.use("/now", function (req, res, next) {
-    req.time = (new Date().toString());
-    next();
-});
-
 // routes
 app.get("/", function (req, res) {
     res.sendFile(__dirname + "/views/index.html");
@@ -35,7 +30,7 @@ app.get("/now", function (req, res, next) {
     req.time = (new Date().toString());
     next();
 }, function (req, res) {
-    res.json({ "time": req.time });
+    res.send({ "time": req.time });
 });
 
 module.exports = app;
