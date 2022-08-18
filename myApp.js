@@ -41,7 +41,7 @@ app.get("/:word/echo", function (req, res) {
 });
 
 app.get("/name", function (req, res) {
-    const name = req.query.firstname + ' ' + req.query.lastname;
+    const name = req.query.first + ' ' + req.query.last;
     res.send({ "name": name });
 });
 
