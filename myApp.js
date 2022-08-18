@@ -37,4 +37,9 @@ app.get("/:word/echo", function (req, res) {
     res.send({ "echo": req.params.word });
 });
 
+app.get("/name", function (req, res) {
+    const name = req.query.firstname + ' ' + req.query.lastname;
+    res.send({ "name": name });
+});
+
 module.exports = app;
